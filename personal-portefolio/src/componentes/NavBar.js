@@ -25,14 +25,25 @@ export const NavBar = () => {
   };
 
   return (
-    <Navbar expand="lg" className={scrolled ? "scrolled" : ""}>
+    <Navbar expand="lg" className={scrolled ? "scrolled" : ""} variant="dark">
       <Container>
         <Navbar.Brand href="#home">
-          <img src={""} alt="Logo" />
+          <FaTerminal size={30} color="#00FF41" />{" "}
+          <span
+            style={{
+              color: "#00FF41",
+              marginLeft: "10px",
+              fontFamily: "monospace",
+            }}
+          >
+            João Taveira
+          </span>
         </Navbar.Brand>
+
         <Navbar.Toggle aria-controls="basic-navbar-nav">
           <span className="navbar-toggler-icon"></span>
         </Navbar.Toggle>
+
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link
@@ -63,7 +74,9 @@ export const NavBar = () => {
               Projects
             </Nav.Link>
           </Nav>
-          <span className="navbar-text">
+
+          {/* Este é o bloco único e correto para os ícones e botão lado a lado */}
+          <span className="navbar-text d-flex align-items-center">
             <div className="social-icon">
               <a
                 href="https://github.com/taveira60"
@@ -79,7 +92,6 @@ export const NavBar = () => {
               >
                 <FaLinkedin size={25} color="#00FF41" />
               </a>
-              {/* Nova linha do Instagram abaixo */}
               <a
                 href="https://instagram.com/joaotaveira666"
                 target="_blank"
