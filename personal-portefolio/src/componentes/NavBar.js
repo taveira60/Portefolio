@@ -2,9 +2,12 @@ import { useState, useEffect } from "react";
 import { Navbar, Container, Nav } from "react-bootstrap";
 import { FaGithub, FaLinkedin, FaTerminal, FaInstagram } from "react-icons/fa";
 
+import { Link, useLocation } from "react-router-dom";
+
 export const NavBar = () => {
   const [activeLink, setActiveLink] = useState("home");
   const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const onScroll = () => {
@@ -27,7 +30,8 @@ export const NavBar = () => {
   return (
     <Navbar expand="lg" className={scrolled ? "scrolled" : ""} variant="dark">
       <Container>
-        <Navbar.Brand href="#home">
+        {/* Atualizamos o Logo para ir para a Home */}
+        <Navbar.Brand as={Link} to="/">
           <FaTerminal size={30} color="#00FF41" />{" "}
           <span
             style={{
@@ -46,36 +50,40 @@ export const NavBar = () => {
 
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
+            {/* Trocamos os hrefs pelos componentes 'Link' e 'to' */}
             <Nav.Link
-              href="#home"
+              as={Link}
+              to="/"
               className={
-                activeLink === "home" ? "active navbar-link" : "navbar-link"
+                location.pathname === "/" ? "active navbar-link" : "navbar-link"
               }
-              onClick={() => onUpdateActiveLink("home")}
             >
               Home
             </Nav.Link>
             <Nav.Link
-              href="#skills"
+              as={Link}
+              to="/skills"
               className={
-                activeLink === "skills" ? "active navbar-link" : "navbar-link"
+                location.pathname === "/skills"
+                  ? "active navbar-link"
+                  : "navbar-link"
               }
-              onClick={() => onUpdateActiveLink("skills")}
             >
               Skills
             </Nav.Link>
             <Nav.Link
-              href="#projects"
+              as={Link}
+              to="/projects"
               className={
-                activeLink === "projects" ? "active navbar-link" : "navbar-link"
+                location.pathname === "/projects"
+                  ? "active navbar-link"
+                  : "navbar-link"
               }
-              onClick={() => onUpdateActiveLink("projects")}
             >
               Projects
             </Nav.Link>
           </Nav>
 
-          {/* Este é o bloco único e correto para os ícones e botão lado a lado */}
           <span className="navbar-text d-flex align-items-center">
             <div className="social-icon">
               <a

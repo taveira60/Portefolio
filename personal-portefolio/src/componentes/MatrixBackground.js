@@ -17,9 +17,9 @@ export const MatrixBackground = () => {
     const alphabet = katakana + latin + nums;
 
     const fontSize = 16;
-    const columns = canvas.width / fontSize;
+    let columns = canvas.width / fontSize;
 
-    const rainDrops = [];
+    let rainDrops = [];
     for (let x = 0; x < columns; x++) {
       rainDrops[x] = 1;
     }

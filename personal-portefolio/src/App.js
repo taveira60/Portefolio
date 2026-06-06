@@ -2,20 +2,36 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
 import { NavBar } from "./componentes/NavBar";
 import { Hero } from "./componentes/Hero";
 import { About } from "./componentes/About";
+import { Skills } from "./componentes/Skills";
 
 function App() {
   return (
-    <div className="App">
-      {/* 4. Chamamos o componente aqui */}
-      <NavBar />
+    <Router>
+      <div className="App">
+        {/* 4. Chamamos o componente aqui */}
+        <NavBar />
 
-      <Hero />
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                <Hero />
 
-      <About />
-    </div>
+                <About />
+              </>
+            }
+          />
+
+          <Route path="/skills" element={<Skills />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
