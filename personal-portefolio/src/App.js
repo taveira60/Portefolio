@@ -8,6 +8,7 @@ import { NavBar } from "./componentes/NavBar";
 import { Hero } from "./componentes/Hero";
 import { About } from "./componentes/About";
 import { Skills } from "./componentes/Skills";
+import { Contact } from "./componentes/Contact";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
           />
 
           <Route path="/skills" element={<Skills />} />
+          <Route path="/contact" element={<Contact />} />
         </Routes>
       </div>
     </Router>

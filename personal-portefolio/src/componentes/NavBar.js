@@ -2,12 +2,13 @@ import { useState, useEffect } from "react";
 import { Navbar, Container, Nav } from "react-bootstrap";
 import { FaGithub, FaLinkedin, FaTerminal, FaInstagram } from "react-icons/fa";
 
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 export const NavBar = () => {
   const [activeLink, setActiveLink] = useState("home");
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const onScroll = () => {
@@ -108,7 +109,7 @@ export const NavBar = () => {
                 <FaInstagram size={25} color="#00FF41" />
               </a>
             </div>
-            <button className="vvd" onClick={() => console.log("connect")}>
+            <button className="vvd" onClick={() => navigate("/contact")}>
               <span>Let's Connect</span>
             </button>
           </span>
