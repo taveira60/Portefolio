@@ -96,7 +96,7 @@ export const Projects = () => {
       description:
         "My personal reactive terminal interface designed to showcase my academic and engineering evolution in realtime.",
       techStack: ["React", "JavaScript", "CSS3", "Bootstrap"],
-      githubUrl: "https://github.com/jts666",
+      githubUrl: "https://github.com/taveira60/Portefolio",
       imgUrl: imgport,
     },
   ];
